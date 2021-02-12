@@ -1,18 +1,19 @@
 ﻿using TechTalk.SpecFlow;
 using FluentAssertions;
-using Xunit;
 using Learning.Domain;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Learning.xUnitSpecs.Steps
 {
 	[Binding]
+	[ExcludeFromCodeCoverage]
 	public sealed class CalculatorStepDefinitions
 	{
 
 		// For additional details on SpecFlow step definitions see https://go.specflow.org/doc-stepdef
 
 		private readonly ScenarioContext _scenarioContext;
-		internal class Context
+		private class Context
 		{
 			public decimal First { get; set; }
 			public decimal Second { get; set; }
@@ -50,6 +51,13 @@ namespace Learning.xUnitSpecs.Steps
 		public void ThenTheResultShouldBe(decimal result)
 		{
 			_ctx.Result.Should().Be(result);
+		}
+
+		[When(@"the two numbers are multiplyied")]
+		public void WhenTheTwoNumbersAreMultiplyied()
+		{
+			var calc = new Calculator();
+			_ctx.Result = calc.Multiply(_ctx.First, _ctx.Second);
 		}
 	}
 }

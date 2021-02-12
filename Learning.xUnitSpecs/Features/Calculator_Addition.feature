@@ -1,4 +1,4 @@
-﻿Feature: Calculator
+﻿Feature: Calculator Addition
 ![Calculator](https://specflow.org/wp-content/uploads/2020/09/calculator.png)
 Simple calculator for adding **two** numbers
 
@@ -11,3 +11,17 @@ Scenario: Add two numbers
 	And the second number is 70
 	When the two numbers are added
 	Then the result should be 120
+
+@xUnit
+Scenario: Add a negative number
+	Given the first number is 20
+	And the second number is -5
+	When the two numbers are added
+	Then the result should be 15
+
+@xUnit
+Scenario: Simple Math
+	Given the first number is 2
+	And the second number is 2
+	When the two numbers are added
+	Then the result should be 4
