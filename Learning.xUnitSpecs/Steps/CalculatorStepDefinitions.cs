@@ -1,35 +1,35 @@
-﻿using Learning.Domain;
-using TechTalk.SpecFlow;
+﻿using TechTalk.SpecFlow;
 using FluentAssertions;
-using System;
-using System.Diagnostics.CodeAnalysis;
+using Xunit;
+using Learning.Domain;
 
-namespace Learning.Specs.Steps
+namespace Learning.xUnitSpecs.Steps
 {
-	[ExcludeFromCodeCoverage]
 	[Binding]
 	public sealed class CalculatorStepDefinitions
 	{
-		internal class TestCtx
+
+		// For additional details on SpecFlow step definitions see https://go.specflow.org/doc-stepdef
+
+		private readonly ScenarioContext _scenarioContext;
+		internal class Context
 		{
 			public decimal First { get; set; }
 			public decimal Second { get; set; }
 			public decimal Result { get; set; }
 		}
 
-		// For additional details on SpecFlow step definitions see https://go.specflow.org/doc-stepdef
+		private Context _ctx = new();
 
-		private readonly ScenarioContext _scenarioContext;
-		private TestCtx _ctx = new TestCtx();
 
-		public CalculatorStepDefinitions(ScenarioContext scenarioContext)
+	public CalculatorStepDefinitions(ScenarioContext scenarioContext)
 		{
 			_scenarioContext = scenarioContext;
 		}
 
 		[Given("the first number is (.*)")]
 		public void GivenTheFirstNumberIs(decimal number)
-		{ 
+		{
 			_ctx.First = number;
 		}
 
@@ -44,11 +44,10 @@ namespace Learning.Specs.Steps
 		{
 			var calc = new Calculator();
 			_ctx.Result = calc.Add(_ctx.First, _ctx.Second);
-			
 		}
 
 		[Then("the result should be (.*)")]
-		public void ThenTheResultShouldBe(int result)
+		public void ThenTheResultShouldBe(decimal result)
 		{
 			_ctx.Result.Should().Be(result);
 		}
