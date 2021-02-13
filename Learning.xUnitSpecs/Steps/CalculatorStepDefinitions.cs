@@ -59,5 +59,12 @@ namespace Learning.xUnitSpecs.Steps
 			var calc = new Calculator();
 			_ctx.Result = calc.Multiply(_ctx.First, _ctx.Second);
 		}
+
+		[When(@"the two numbers are divided")]
+		public void WhenTheTwoNumbersAreDivided()
+		{
+			var calc = new Calculator();
+			_ctx.Result = calc.Divided(_ctx.First, _ctx.Second);
+		}
 	}
 }

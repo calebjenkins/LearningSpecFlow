@@ -10,7 +10,13 @@ Scenario: Multiply two numbers
 
 @division
 Scenario: Divide with decimals
-	Given the first number is 50
-	And the second number is 0.5
-	When the two numbers are multiplyied
-	Then the result should be 25
+	Given the first number is 100
+	And the second number is 2
+	When the two numbers are divided
+	Then the result should be 50
+#
+#	Examples:
+#		| Num1 | Num2 | Equals |
+#		| 20   | 2    |10|
+#		| 50   | 10   |5|
+#	

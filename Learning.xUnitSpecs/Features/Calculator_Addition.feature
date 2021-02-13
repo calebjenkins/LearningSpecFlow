@@ -19,9 +19,15 @@ Scenario: Add a negative number
 	When the two numbers are added
 	Then the result should be 15
 
-@xUnit
+@xUnit @TableDriven
 Scenario: Simple Math
-	Given the first number is 2
-	And the second number is 2
+	Given the first number is <Num1>
+	And the second number is <Num2>
 	When the two numbers are added
-	Then the result should be 4
+	Then the result should be <Total>
+
+	Examples:
+		| Num1 | Num2 | Total |
+		| 2    | 5    | 7     |
+		| 20   | 10   | 30    |
+		| 30   | -10  | 20    |
