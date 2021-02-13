@@ -1,4 +1,4 @@
-﻿Feature: Calculator Addition
+﻿Feature: Calculator_Addition
 ![Calculator](https://specflow.org/wp-content/uploads/2020/09/calculator.png)
 Simple calculator for adding **two** numbers
 

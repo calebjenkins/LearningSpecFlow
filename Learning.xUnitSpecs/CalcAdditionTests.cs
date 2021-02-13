@@ -7,11 +7,11 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace Learning.xUnitSpecs.Features
+namespace Learning.xUnitSpecs
 {
 	public class CalcAdditionTests
 	{
-		[Fact]
+		// [Fact]
 		public void Two_Numbers_Should_Add()
 		{
 			decimal one = 50;

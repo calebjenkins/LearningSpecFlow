@@ -19,7 +19,7 @@ namespace Learning.xUnitSpecs.Features
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "3.6.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public partial class CalculatorAdditionFeature : object, Xunit.IClassFixture<CalculatorAdditionFeature.FixtureData>, System.IDisposable
+    public partial class Calculator_AdditionFeature : object, Xunit.IClassFixture<Calculator_AdditionFeature.FixtureData>, System.IDisposable
     {
         
         private static TechTalk.SpecFlow.ITestRunner testRunner;
@@ -31,7 +31,7 @@ namespace Learning.xUnitSpecs.Features
 #line 1 "Calculator_Addition.feature"
 #line hidden
         
-        public CalculatorAdditionFeature(CalculatorAdditionFeature.FixtureData fixtureData, Learning_xUnitSpecs_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
+        public Calculator_AdditionFeature(Calculator_AdditionFeature.FixtureData fixtureData, Learning_xUnitSpecs_XUnitAssemblyFixture assemblyFixture, Xunit.Abstractions.ITestOutputHelper testOutputHelper)
         {
             this._testOutputHelper = testOutputHelper;
             this.TestInitialize();
@@ -40,7 +40,7 @@ namespace Learning.xUnitSpecs.Features
         public static void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Calculator Addition", @"![Calculator](https://specflow.org/wp-content/uploads/2020/09/calculator.png)
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Features", "Calculator_Addition", @"![Calculator](https://specflow.org/wp-content/uploads/2020/09/calculator.png)
 Simple calculator for adding **two** numbers
 
 Link to a feature: [Calculator](Learning.xUnitSpecs/Features/Calculator.feature)
@@ -85,7 +85,7 @@ Link to a feature: [Calculator](Learning.xUnitSpecs/Features/Calculator.feature)
         }
         
         [Xunit.SkippableFactAttribute(DisplayName="Add two numbers")]
-        [Xunit.TraitAttribute("FeatureTitle", "Calculator Addition")]
+        [Xunit.TraitAttribute("FeatureTitle", "Calculator_Addition")]
         [Xunit.TraitAttribute("Description", "Add two numbers")]
         [Xunit.TraitAttribute("Category", "xUnit")]
         [Xunit.TraitAttribute("Category", "secondTag")]
@@ -133,7 +133,7 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [Xunit.SkippableFactAttribute(DisplayName="Add a negative number")]
-        [Xunit.TraitAttribute("FeatureTitle", "Calculator Addition")]
+        [Xunit.TraitAttribute("FeatureTitle", "Calculator_Addition")]
         [Xunit.TraitAttribute("Description", "Add a negative number")]
         [Xunit.TraitAttribute("Category", "xUnit")]
         public virtual void AddANegativeNumber()
@@ -179,7 +179,7 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [Xunit.SkippableTheoryAttribute(DisplayName="Simple Math")]
-        [Xunit.TraitAttribute("FeatureTitle", "Calculator Addition")]
+        [Xunit.TraitAttribute("FeatureTitle", "Calculator_Addition")]
         [Xunit.TraitAttribute("Description", "Simple Math")]
         [Xunit.TraitAttribute("Category", "xUnit")]
         [Xunit.TraitAttribute("Category", "TableDriven")]
@@ -244,12 +244,12 @@ this.ScenarioInitialize(scenarioInfo);
             
             public FixtureData()
             {
-                CalculatorAdditionFeature.FeatureSetup();
+                Calculator_AdditionFeature.FeatureSetup();
             }
             
             void System.IDisposable.Dispose()
             {
-                CalculatorAdditionFeature.FeatureTearDown();
+                Calculator_AdditionFeature.FeatureTearDown();
             }
         }
     }
