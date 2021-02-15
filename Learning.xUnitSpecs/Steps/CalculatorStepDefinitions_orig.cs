@@ -2,30 +2,25 @@
 using FluentAssertions;
 using Learning.Domain;
 using System.Diagnostics.CodeAnalysis;
+using Learning.xUnitSpecs.Steps.Contexts;
 
 namespace Learning.xUnitSpecs.Steps
 {
-	[Binding]
+	// [Binding]
 	[ExcludeFromCodeCoverage]
-	public sealed class CalculatorStepDefinitions
+	public sealed class CalculatorStepDefinitions_orig
 	{
 
 		// For additional details on SpecFlow step definitions see https://go.specflow.org/doc-stepdef
 
 		private readonly ScenarioContext _scenarioContext;
-		private class Context
-		{
-			public decimal First { get; set; }
-			public decimal Second { get; set; }
-			public decimal Result { get; set; }
-		}
-
-		private Context _ctx = new();
+		private CalculatorScenarioContext _ctx;
 
 
-	public CalculatorStepDefinitions(ScenarioContext scenarioContext)
+	public CalculatorStepDefinitions_orig(ScenarioContext scenarioContext, CalculatorScenarioContext calcContext)
 		{
 			_scenarioContext = scenarioContext;
+			_ctx = calcContext;
 		}
 
 		[Given("the first number is (.*)")]
