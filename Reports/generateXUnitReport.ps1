@@ -1,4 +1,7 @@
 
+# requires LivingDoc tool. Use:
+# dotnet tool install specflow.plus.livingdoc.cli --global
+
 #set for runner/namespace
 $testRunner = "xUnit"
 
