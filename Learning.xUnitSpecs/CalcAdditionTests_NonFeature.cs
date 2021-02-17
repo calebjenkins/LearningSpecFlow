@@ -1,17 +1,15 @@
 ﻿using FluentAssertions;
 using Learning.Domain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Diagnostics.CodeAnalysis;
 using Xunit;
 
 namespace Learning.xUnitSpecs
 {
-	public class CalcAdditionTests
+	public class CalcAdditionTests_NonFeature
 	{
-		// [Fact]
+		[Fact]
+		[Trait("Runner", "xUnit")]
+		[ExcludeFromCodeCoverage]
 		public void Two_Numbers_Should_Add()
 		{
 			decimal one = 50;

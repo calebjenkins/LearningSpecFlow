@@ -3,13 +3,16 @@ using Learning.xUnitSpecs.Steps.Contexts;
 using System;
 using TechTalk.SpecFlow;
 using FluentAssertions;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Learning.xUnitSpecs.Steps
 {
-	// [Binding]
-	public class Calculator_Steps
-	{
+	[ExcludeFromCodeCoverage]
+	[Binding]
+    public class Calculator_Steps
+    {
 		private readonly CalculatorScenarioContext _ctx;
+
 		public Calculator_Steps(CalculatorScenarioContext context)
 		{
 			_ctx = context ?? throw new ArgumentNullException("context cannot be null");
@@ -34,12 +37,6 @@ namespace Learning.xUnitSpecs.Steps
 			_ctx.Result = calc.Add(_ctx.First, _ctx.Second);
 		}
 
-		[Then(@"the result should be (.*)")]
-		public void ThenTheResultShouldBe(decimal number)
-		{
-			_ctx.Result.Should().Be(number);
-		}
-
 		[When(@"the two numbers are multiplyied")]
 		public void WhenTheTwoNumbersAreMultiplyied()
 		{
@@ -54,5 +51,10 @@ namespace Learning.xUnitSpecs.Steps
 			_ctx.Result = calc.Divided(_ctx.First, _ctx.Second);
 		}
 
+		[Then(@"the result should be (.*)")]
+		public void ThenTheResultShouldBe(decimal number)
+		{
+			_ctx.Result.Should().Be(number);
+		}
 	}
 }
