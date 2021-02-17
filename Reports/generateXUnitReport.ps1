@@ -1,17 +1,15 @@
-# $path = "..\Learning.xUnitSpecs\bin\Debug\net5.0\"
-# $command = "livingdoc" # test-assembly .\Learning.xUnitSpecs.dll -t TestExecution.json"
-# $fileName = "LivingDoc.html"
-# $testResultData = "TestExecution.json"
 
-# livingdoc test-assembly $path\\Learning.xUnitSpecs.dll -t $path\\$testResultData
+#set for runner/namespace
+$testRunner = "xUnit"
 
-# # copy $path$fileName .\$fileName
-# # copy $path$testResultData .\$testResultData
+#fixed variables
+$reportName = "LivingDoc.html"
+$featureFolder = "..\Learning." + $testRunner + "Specs"
+$testExecutionFile = "..\Learning." + $testRunner + "Specs\bin\Debug\net5.0\TestExecution.json"
 
-# explorer.exe $fileName
+#generate Report
+livingdoc feature-folder $featureFolder -t $testExecutionFile 
 
-livingdoc feature-folder ..\Learning.xUnitSpecs  -t ..\Learning.xUnitSpecs\bin\Debug\net5.0\TestExecution.json
-
-$fileName = "LivingDoc.html"
-
-explorer.exe $fileName
+#rename generated file
+move .\$reportName .\$testRunner-$reportName -Force
+explorer.exe .\$testRunner-$reportName
