@@ -18,5 +18,11 @@ namespace Learning.Domain
 		{
 			return Num1 / Num2;
 		}
+
+		public decimal Modulus (decimal Num1, decimal Num2)
+		{
+			var result = Num1 % Num2;
+			return result;
+		}
 	}
 }

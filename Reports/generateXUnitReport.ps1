@@ -9,9 +9,12 @@ $testRunner = "xUnit"
 $reportName = "LivingDoc.html"
 $featureFolder = "..\Learning." + $testRunner + "Specs"
 $testExecutionFile = "..\Learning." + $testRunner + "Specs\bin\Debug\net5.0\TestExecution.json"
+$bindingAssembly = "..\Learning." + $testRunner + "Specs\bin\Debug\net5.0\Learning." + $testRunner + "Specs.dll"
+
 
 #generate Report
-livingdoc feature-folder $featureFolder -t $testExecutionFile 
+# livingdoc feature-folder $featureFolder -t $testExecutionFile --binding-assemblies $bindingAssembly
+livingdoc test-assembly $bindingAssembly -t $testExecutionFile --binding-assemblies $bindingAssembly
 
 #rename generated file
 move .\$reportName .\$testRunner-$reportName -Force

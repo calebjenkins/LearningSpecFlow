@@ -89,11 +89,13 @@ Link to a feature: [Calculator](Learning.xUnitSpecs/Features/Calculator.feature)
         [Xunit.TraitAttribute("Description", "Add two numbers")]
         [Xunit.TraitAttribute("Category", "xUnit")]
         [Xunit.TraitAttribute("Category", "secondTag")]
+        [Xunit.TraitAttribute("Category", "Zeph_TS-1234")]
         public virtual void AddTwoNumbers()
         {
             string[] tagsOfScenario = new string[] {
                     "xUnit",
-                    "secondTag"};
+                    "secondTag",
+                    "Zeph_TS-1234"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add two numbers", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 9
@@ -136,10 +138,12 @@ this.ScenarioInitialize(scenarioInfo);
         [Xunit.TraitAttribute("FeatureTitle", "Calculator_Addition")]
         [Xunit.TraitAttribute("Description", "Add a negative number")]
         [Xunit.TraitAttribute("Category", "xUnit")]
+        [Xunit.TraitAttribute("Category", "Zeph_TS-5678")]
         public virtual void AddANegativeNumber()
         {
             string[] tagsOfScenario = new string[] {
-                    "xUnit"};
+                    "xUnit",
+                    "Zeph_TS-5678"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Add a negative number", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 16
@@ -183,6 +187,7 @@ this.ScenarioInitialize(scenarioInfo);
         [Xunit.TraitAttribute("Description", "Simple Math")]
         [Xunit.TraitAttribute("Category", "xUnit")]
         [Xunit.TraitAttribute("Category", "TableDriven")]
+        [Xunit.TraitAttribute("Category", "Zeph_TS-1224")]
         [Xunit.InlineDataAttribute("2", "5", "7", new string[0])]
         [Xunit.InlineDataAttribute("20", "10", "30", new string[0])]
         [Xunit.InlineDataAttribute("30", "-10", "20", new string[0])]
@@ -190,7 +195,8 @@ this.ScenarioInitialize(scenarioInfo);
         {
             string[] @__tags = new string[] {
                     "xUnit",
-                    "TableDriven"};
+                    "TableDriven",
+                    "Zeph_TS-1224"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));

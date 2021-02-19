@@ -5,21 +5,21 @@ Simple calculator for adding **two** numbers
 Link to a feature: [Calculator](Learning.xUnitSpecs/Features/Calculator.feature)
 ***Further read***: **[Learn more about how to generate Living Documentation](https://docs.specflow.org/projects/specflow-livingdoc/en/latest/LivingDocGenerator/Generating-Documentation.html)**
 
-@xUnit @secondTag
+@xUnit @secondTag @Zeph_TS-1234
 Scenario: Add two numbers
 	Given the first number is 50
 	And the second number is 70
 	When the two numbers are added
 	Then the result should be 120
 
-@xUnit
+@xUnit @Zeph_TS-5678
 Scenario: Add a negative number
 	Given the first number is 20
 	And the second number is -5
 	When the two numbers are added
 	Then the result should be 15
 
-@xUnit @TableDriven
+@xUnit @TableDriven @Zeph_TS-1224
 Scenario: Simple Math
 	Given the first number is <Num1>
 	And the second number is <Num2>

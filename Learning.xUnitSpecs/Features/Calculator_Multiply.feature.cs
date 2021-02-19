@@ -84,10 +84,12 @@ namespace Learning.xUnitSpecs.Features
         [Xunit.TraitAttribute("FeatureTitle", "Calculator_Multiply")]
         [Xunit.TraitAttribute("Description", "Multiply two numbers")]
         [Xunit.TraitAttribute("Category", "multiplication")]
+        [Xunit.TraitAttribute("Category", "Zeph_TS-45676")]
         public virtual void MultiplyTwoNumbers()
         {
             string[] tagsOfScenario = new string[] {
-                    "multiplication"};
+                    "multiplication",
+                    "Zeph_TS-45676"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Multiply two numbers", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 5
@@ -130,12 +132,14 @@ this.ScenarioInitialize(scenarioInfo);
         [Xunit.TraitAttribute("FeatureTitle", "Calculator_Multiply")]
         [Xunit.TraitAttribute("Description", "Divide with decimals")]
         [Xunit.TraitAttribute("Category", "division")]
+        [Xunit.TraitAttribute("Category", "Zeph_TS-16789")]
         [Xunit.InlineDataAttribute("20", "2", "10", new string[0])]
         [Xunit.InlineDataAttribute("50", "10", "5", new string[0])]
         public virtual void DivideWithDecimals(string num1, string num2, string result, string[] exampleTags)
         {
             string[] @__tags = new string[] {
-                    "division"};
+                    "division",
+                    "Zeph_TS-16789"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -177,6 +181,52 @@ this.ScenarioInitialize(scenarioInfo);
 #line hidden
 #line 16
  testRunner.Then(string.Format("the result should be {0}", result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [Xunit.SkippableFactAttribute(DisplayName="Discover the Modulas")]
+        [Xunit.TraitAttribute("FeatureTitle", "Calculator_Multiply")]
+        [Xunit.TraitAttribute("Description", "Discover the Modulas")]
+        [Xunit.TraitAttribute("Category", "Zeph_TS-56109")]
+        public virtual void DiscoverTheModulas()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "Zeph_TS-56109"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Discover the Modulas", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
+#line 24
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 25
+ testRunner.Given("the first number is 15", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 26
+ testRunner.And("the second number is 4", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 27
+ testRunner.When("the Modulas is calculated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 28
+ testRunner.Then("the result should be 3", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

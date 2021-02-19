@@ -1,16 +1,16 @@
-﻿using Learning.Domain;
+﻿using FluentAssertions;
+using Learning.Domain;
 using Learning.xUnitSpecs.Steps.Contexts;
 using System;
-using TechTalk.SpecFlow;
-using FluentAssertions;
 using System.Diagnostics.CodeAnalysis;
+using TechTalk.SpecFlow;
 
 namespace Learning.xUnitSpecs.Steps
 {
 	[ExcludeFromCodeCoverage]
 	[Binding]
-    public class Calculator_Steps
-    {
+	public class Calculator_Steps
+	{
 		private readonly CalculatorScenarioContext _ctx;
 
 		public Calculator_Steps(CalculatorScenarioContext context)
@@ -49,6 +49,20 @@ namespace Learning.xUnitSpecs.Steps
 		{
 			var calc = new Calculator();
 			_ctx.Result = calc.Divided(_ctx.First, _ctx.Second);
+		}
+
+		[When(@"the Modulas is calculated")]
+		public void WhenTheModulasIsCalculated()
+		{
+			Calculator calc = new();
+			_ctx.Result = calc.Modulus(_ctx.First, _ctx.Second);
+		}
+
+		[When(@"you don't update the step definitions")]
+		public void WhenYouDontUpdateStepDefinitions()
+		{
+			// do something. 
+			_ctx.First.ToString().Length.Should().BeGreaterThan(0);
 		}
 
 		[Then(@"the result should be (.*)")]

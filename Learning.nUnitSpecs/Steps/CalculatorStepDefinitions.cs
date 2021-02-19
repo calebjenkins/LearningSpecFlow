@@ -9,10 +9,12 @@ namespace Learning.nUnitSpecs.Steps
 	public sealed class CalculatorStepDefinitions
 	{
 		private readonly CalculatorScenarioContext _ctx;
+		private readonly ScenarioContext _scenarioContext;
 
-		public CalculatorStepDefinitions(CalculatorScenarioContext scenarioContext)
+		public CalculatorStepDefinitions(CalculatorScenarioContext calcScenarioContext, ScenarioContext ScenarioContext)
 		{
-			_ctx = scenarioContext;
+			_ctx = calcScenarioContext;
+			_scenarioContext = ScenarioContext;
 		}
 
 		[Given("the first number is (.*)")]
@@ -38,6 +40,19 @@ namespace Learning.nUnitSpecs.Steps
 		public void ThenTheResultShouldBe(decimal result)
 		{
 			_ctx.Result.Should().Be(result);
+		}
+
+		[Then("the unused result should be (.*)")]
+		[Then(@"the total will be (.*)")]
+		public void ThenTheUnusedResultShouldBe(decimal result)
+		{
+			_ctx.Result.Should().Be(result);
+		}
+
+		[Then("some unused Step that isn't showing up")]
+		public void SomeUnusedStepThatIsntShowingUp()
+		{
+			_scenarioContext.Pending();
 		}
 	}
 }
