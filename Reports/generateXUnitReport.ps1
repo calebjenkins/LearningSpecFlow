@@ -1,6 +1,7 @@
 
 # requires LivingDoc tool. Use:
 # dotnet tool install specflow.plus.livingdoc.cli --global
+dotnet tool restore
 
 #set for runner/namespace
 $testRunner = "xUnit"
@@ -14,7 +15,7 @@ $bindingAssembly = "..\Learning." + $testRunner + "Specs\bin\Debug\net5.0\Learni
 
 #generate Report
 # livingdoc feature-folder $featureFolder -t $testExecutionFile --binding-assemblies $bindingAssembly
-livingdoc test-assembly $bindingAssembly -t $testExecutionFile --binding-assemblies $bindingAssembly
+dotnet livingdoc test-assembly $bindingAssembly -t $testExecutionFile --binding-assemblies $bindingAssembly
 
 #rename generated file
 move .\$reportName .\$testRunner-$reportName -Force
