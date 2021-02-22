@@ -1,4 +1,5 @@
-﻿Feature: Calculator_Multiply
+﻿
+Feature: Calculator_Multiply
 	Simple calculator for multiplying two numbers
 
 @multiplication @Zeph_TS-45676
@@ -8,6 +9,7 @@ Scenario: Multiply two numbers
 	When the two numbers are multiplyied
 	Then the result should be 700
 
+@ignore
 @division @Zeph_TS-16789
 Scenario: Divide with decimals
 	Given the first number is <Num1>
@@ -20,6 +22,7 @@ Scenario: Divide with decimals
 		| 20   | 2    | 10     |
 		| 50   | 10   | 5      |
 
+@retry(5)
 @Zeph_TS-56109
 Scenario: Discover the Modulas
 	Given the first number is 15

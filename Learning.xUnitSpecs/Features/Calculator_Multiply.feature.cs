@@ -92,7 +92,7 @@ namespace Learning.xUnitSpecs.Features
                     "Zeph_TS-45676"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Multiply two numbers", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 5
+#line 6
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -112,23 +112,23 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 6
+#line 7
  testRunner.Given("the first number is 10", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 7
+#line 8
  testRunner.And("the second number is 70", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 8
+#line 9
  testRunner.When("the two numbers are multiplyied", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 9
+#line 10
  testRunner.Then("the result should be 700", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [Xunit.SkippableTheoryAttribute(DisplayName="Divide with decimals")]
+        [Xunit.SkippableTheoryAttribute(DisplayName="Divide with decimals", Skip="Ignored")]
         [Xunit.TraitAttribute("FeatureTitle", "Calculator_Multiply")]
         [Xunit.TraitAttribute("Description", "Divide with decimals")]
         [Xunit.TraitAttribute("Category", "division")]
@@ -138,6 +138,7 @@ this.ScenarioInitialize(scenarioInfo);
         public virtual void DivideWithDecimals(string num1, string num2, string result, string[] exampleTags)
         {
             string[] @__tags = new string[] {
+                    "ignore",
                     "division",
                     "Zeph_TS-16789"};
             if ((exampleTags != null))
@@ -150,7 +151,7 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("Num2", num2);
             argumentsOfScenario.Add("Result", result);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Divide with decimals", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 12
+#line 14
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -170,33 +171,35 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 13
+#line 15
  testRunner.Given(string.Format("the first number is {0}", num1), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 14
+#line 16
  testRunner.And(string.Format("the second number is {0}", num2), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 15
+#line 17
  testRunner.When("the two numbers are divided", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 16
+#line 18
  testRunner.Then(string.Format("the result should be {0}", result), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
-        [Xunit.SkippableFactAttribute(DisplayName="Discover the Modulas")]
         [Xunit.TraitAttribute("FeatureTitle", "Calculator_Multiply")]
         [Xunit.TraitAttribute("Description", "Discover the Modulas")]
+        [Xunit.TraitAttribute("Category", "retry(5)")]
         [Xunit.TraitAttribute("Category", "Zeph_TS-56109")]
+        [xRetry.RetryFact(5, DisplayName="Discover the Modulas")]
         public virtual void DiscoverTheModulas()
         {
             string[] tagsOfScenario = new string[] {
+                    "retry(5)",
                     "Zeph_TS-56109"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Discover the Modulas", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 24
+#line 27
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -216,16 +219,16 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 25
+#line 28
  testRunner.Given("the first number is 15", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 26
+#line 29
  testRunner.And("the second number is 4", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 27
+#line 30
  testRunner.When("the Modulas is calculated", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 28
+#line 31
  testRunner.Then("the result should be 3", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
