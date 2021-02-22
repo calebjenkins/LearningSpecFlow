@@ -20,6 +20,7 @@ Scenario: Divide with decimals
 		| 20   | 2    | 10     |
 		| 50   | 10   | 5      |
 
+@ignore
 @Zeph_TS-56109
 Scenario: Discover the Modulas
 	Given the first number is 15
