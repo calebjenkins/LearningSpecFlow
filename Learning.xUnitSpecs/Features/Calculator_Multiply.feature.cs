@@ -132,14 +132,14 @@ this.ScenarioInitialize(scenarioInfo);
         [Xunit.TraitAttribute("FeatureTitle", "Calculator_Multiply")]
         [Xunit.TraitAttribute("Description", "Divide with decimals")]
         [Xunit.TraitAttribute("Category", "division")]
-        [Xunit.TraitAttribute("Category", "Zeph(TS-16789)")]
+        [Xunit.TraitAttribute("Category", "Zeph_TS-16789")]
         [Xunit.InlineDataAttribute("20", "2", "10", new string[0])]
         [Xunit.InlineDataAttribute("50", "10", "5", new string[0])]
         public virtual void DivideWithDecimals(string num1, string num2, string result, string[] exampleTags)
         {
             string[] @__tags = new string[] {
                     "division",
-                    "Zeph(TS-16789)"};
+                    "Zeph_TS-16789"};
             if ((exampleTags != null))
             {
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
@@ -190,12 +190,12 @@ this.ScenarioInitialize(scenarioInfo);
         [Xunit.TraitAttribute("FeatureTitle", "Calculator_Multiply")]
         [Xunit.TraitAttribute("Description", "Discover the Modulas")]
         [Xunit.TraitAttribute("Category", "ignore")]
-        [Xunit.TraitAttribute("Category", "Zeph(TS-56109)")]
+        [Xunit.TraitAttribute("Category", "Zeph_TS-56109")]
         public virtual void DiscoverTheModulas()
         {
             string[] tagsOfScenario = new string[] {
                     "ignore",
-                    "Zeph(TS-56109)"};
+                    "Zeph_TS-56109"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Discover the Modulas", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
 #line 25
